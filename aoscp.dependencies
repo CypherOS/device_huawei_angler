@@ -6,7 +6,7 @@
     "branch":      "n7.0"
   },
   {
-    "repository": "AICP/proprietary_vendor_huawei",
+    "repository":  "proprietary_vendor_huawei",
     "target_path": "vendor/huawei",
 	"remote":      "cypher",
     "branch":      "n7.0"

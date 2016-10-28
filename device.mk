@@ -27,7 +27,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/init.angler.usb.rc:root/init.angler.usb.rc \
     device/huawei/angler/fstab.angler:root/fstab.angler \
     device/huawei/angler/ueventd.angler.rc:root/ueventd.angler.rc \
-    device/huawei/angler/init.angler.power.sh:system/bin/init.angler.power.sh
+    device/huawei/angler/init.angler.power.sh:system/bin/init.angler.power.sh \
+    device/huawei/angler/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
@@ -427,7 +428,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 ifeq (,$(filter aosp_angler, $(TARGET_PRODUCT)))
 PRODUCT_PACKAGES += \
-    QXDMLogger
+    QXDMLoggerV2
 endif # aosp_angler
 
 PRODUCT_COPY_FILES += \
@@ -492,3 +493,13 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4358
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/huawei/angler/location/etc/gps.conf:system/etc/gps.conf:qcom
+
+# b/28992626
+# For app investigation, make ASAN-lite only sanitize 32-bit.
+ifeq (true,$(SANITIZE_LITE))
+  SANITIZE_ARCH := 32
+endif
+
+# b/29995499
+$(call add-product-sanitizer-module-config,cameraserver,never)
+$(call add-product-sanitizer-module-config,mm-qcamera-daemon,never)

@@ -207,9 +207,9 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     mm-qcamera-app
 
-# Snap (Snapdragon) camera
-#PRODUCT_PACKAGES += \
-#    Snap
+# Camero Camera
+PRODUCT_PACKAGES += \
+    Camero
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false

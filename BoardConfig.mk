@@ -140,9 +140,6 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 #NFC
 NXP_CHIP_TYPE := 2
 
-# Testing related defines
-BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/angler-setup.sh
-
 TARGET_FS_CONFIG_GEN += device/huawei/angler/config.fs
 
 DEVICE_MANIFEST_FILE := device/huawei/angler/manifest.xml

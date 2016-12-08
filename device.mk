@@ -222,8 +222,7 @@ PRODUCT_PACKAGES += \
 
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
-    libtinyxml \
-    libprotobuf-cpp-full
+    libtinyxml
 
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true

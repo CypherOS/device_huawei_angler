@@ -140,9 +140,6 @@ on boot
     # TapToWake
     chown system system /sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input/input0/wake_gesture
 
-    # MDSS PCC RGB colour adjust interface
-    chown system system /sys/devices/virtual/graphics/fb0/rg
-
     # Vibrator intensity
     chown system system /sys/devices/virtual/timed_output/vibrator/vmax_mv_light
     chown system system /sys/devices/virtual/timed_output/vibrator/vmax_mv_strong

@@ -2,13 +2,13 @@
   {
     "repository":  "kernel_huawei_angler",
     "target_path": "kernel/huawei/angler",
-    "remote":      "aicp",
+    "remote":      "aoscp",
     "branch":      "n7.1"
   },
   {
     "repository":  "proprietary_vendor_huawei",
     "target_path": "vendor/huawei",
-    "remote":      "aicp",
+    "remote":      "aoscp",
     "branch":      "n7.1"
   }
 ]

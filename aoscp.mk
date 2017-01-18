@@ -7,8 +7,6 @@ $(call inherit-product, vendor/aoscp/configs/telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/angler/overlay-cm
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
@@ -25,5 +23,5 @@ TARGET_VENDOR := huawei
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:7.1.1/NMF26F/3425388:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.1.1 NMF26F 3425388 release-keys"
+    BUILD_FINGERPRINT=google/angler/angler:7.1.1/N4F26J/3549317:user/release-keys \
+    PRIVATE_BUILD_DESC="angler-user 7.1.1 N4F26J 3549317 release-keys"

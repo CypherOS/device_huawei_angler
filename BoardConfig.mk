@@ -166,10 +166,4 @@ else
 USE_CLANG_PLATFORM_BUILD := true
 endif
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := \
-    hardware/cyanogen/cmhw \
-    device/huawei/angler/cmhw
-
 -include vendor/huawei/angler/BoardConfigVendor.mk

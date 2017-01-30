@@ -18,7 +18,6 @@
 
 # <src relative to root of extracted filesystem>:<dst relative to system>
 
-bin/nanoapp_cmd
 bin/ssr_setup
 bin/subsystem_ramdump
 etc/diag/Angler_Radio-general.cfg

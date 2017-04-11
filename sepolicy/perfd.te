@@ -5,6 +5,8 @@ init_daemon_domain(perfd)
 
 allow perfd cameraserver:process signull;
 
+allow perfd device:file rw_file_perms;
+
 allow perfd perfd_data_file:dir rw_dir_perms;
 allow perfd perfd_data_file:file create_file_perms;
 allow perfd perfd_data_file:sock_file create_file_perms;

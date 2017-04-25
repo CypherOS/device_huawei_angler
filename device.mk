@@ -308,6 +308,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     libnfc-nci \
+    nfc_nci.pn54x.default \
     NfcNci \
     Tag \
     nfc_nci.angler \

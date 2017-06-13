@@ -3,12 +3,12 @@
     "repository":  "kernel_huawei_angler",
     "target_path": "kernel/huawei/angler",
     "remote":      "aoscp",
-    "branch":      "nougat-mr1"
+    "branch":      "nougat-mr2"
   },
   {
     "repository":  "proprietary_vendor_huawei",
     "target_path": "vendor/huawei",
     "remote":      "aoscp",
-    "branch":      "nougat-mr1"
+    "branch":      "nougat-mr2"
   }
 ]

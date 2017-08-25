@@ -2360,15 +2360,15 @@ void *QCameraPostProcessor::dataSaveRoutine(void *data)
 
                     int file_fd = open(saveName, O_RDWR | O_CREAT, 0655);
                     if (file_fd >= 0) {
-                        ssize_t written_len = write(file_fd, job_data->out_data.buf_vaddr,
+                        size_t written_len = write(file_fd, job_data->out_data.buf_vaddr,
                                 job_data->out_data.buf_filled_len);
-                        if ((ssize_t)job_data->out_data.buf_filled_len != written_len) {
-                            ALOGE("%s: Failed save complete data %d bytes "
+                        if ((size_t)job_data->out_data.buf_filled_len != written_len) {
+                            ALOGE("%s: Failed save complete data %zu bytes "
                                   "written instead of %d bytes!",
                                   __func__, written_len,
                                   job_data->out_data.buf_filled_len);
                         } else {
-                            CDBG_HIGH("%s: written number of bytes %d\n",
+                            CDBG_HIGH("%s: written number of bytes %zu\n",
                                 __func__, written_len);
                         }
 

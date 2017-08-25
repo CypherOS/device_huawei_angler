@@ -2,6 +2,6 @@
   {
     "repository": "CarbonROM/android_kernel_huawei_angler",
     "target_path": "kernel/huawei/angler",
-    "revision": "cr-5.1"
+    "revision": "cr-6.1"
   }
 ]

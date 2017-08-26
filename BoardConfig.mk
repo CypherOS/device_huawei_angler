@@ -146,4 +146,9 @@ TARGET_FS_CONFIG_GEN += device/huawei/angler/config.fs
 DEVICE_MANIFEST_FILE := device/huawei/angler/manifest.xml
 DEVICE_MATRIX_FILE := device/huawei/angler/compatibility_matrix.xml
 
+# Conditional to building on linux, as dex2oat currently does not work on darwin.
+ifeq ($(HOST_OS),linux)
+   WITH_DEXPREOPT::= true
+endif
+
 -include vendor/huawei/angler/BoardConfigVendor.mk

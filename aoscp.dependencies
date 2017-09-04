@@ -1,0 +1,14 @@
+[
+  {
+    "repository":  "kernel_huawei_angler",
+    "target_path": "kernel/huawei/angler",
+    "remote":      "aoscp",
+    "branch":      "oreo-release"
+  },
+  {
+    "repository":  "proprietary_vendor_huawei",
+    "target_path": "vendor/huawei",
+    "remote":      "aoscp",
+    "branch":      "oreo-release"
+  }
+]

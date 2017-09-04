@@ -17,9 +17,6 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-# Get the long list of APNs
-PRODUCT_COPY_FILES := device/huawei/angler/apns-full-conf.xml:system/etc/apns-conf.xml
-
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -27,14 +24,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 PRODUCT_NAME := aosp_angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on angler
+PRODUCT_MODEL := Nexus 6P
 PRODUCT_MANUFACTURER := Huawei
-PRODUCT_RESTRICT_VENDOR_FILES := true
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_COPY_FILES += device/huawei/angler/fstab.aosp_angler:root/fstab.angler
 
 $(call inherit-product, device/huawei/angler/device.mk)
-$(call inherit-product-if-exists, vendor/huawei/angler/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/angler/angler-vendor.mk)
 
 PRODUCT_PACKAGES += \
     Launcher3 \

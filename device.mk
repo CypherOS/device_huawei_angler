@@ -22,12 +22,6 @@
 # Enable support for chinook sensorhub
 TARGET_USES_CHINOOK_SENSORHUB := false
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-  LOCAL_KERNEL := device/huawei/angler-kernel/Image.gz-dtb
-else
-  LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
 
@@ -95,10 +89,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     device/huawei/angler/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
     device/huawei/angler/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc
-
-# for launcher layout
-PRODUCT_PACKAGES += \
-    AnglerLayout
 
 # Fingerprint Sensor
 PRODUCT_PACKAGES += \
@@ -316,6 +306,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
     libnfc-nci \
     NfcNci \
     Tag \
@@ -388,12 +379,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Write Manufacturer & Model information in created media files.
 # IMPORTANT: ONLY SET THIS PROPERTY TO TRUE FOR PUBLIC DEVICES
-ifneq ($(filter aosp_angler% angler%, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
     media.recorder.show_manufacturer_and_model=true
-else
-$(error "you must decide whether to write manufacturer and model information into created media files for this device. ONLY ENABLE IT FOR PUBLIC DEVICE.")
-endif  #TARGET_PRODUCT
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
@@ -415,7 +402,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # for perfd
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min_freq_0=384000
+    ro.min_freq_0=384000 \
     ro.min_freq_4=384000
 
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -243,8 +243,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface2 \
     libmmjpeg_interface \
     libqomx_core \
-    mm-qcamera-app \
-    Snap
+    mm-qcamera-app
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false
@@ -600,7 +599,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bc
 PRODUCT_COPY_FILES += \
     device/huawei/angler/gps.conf:system/etc/gps.conf:qcom
 
-# only include verity on user builds for lineage
+# only include verity on user builds for aoscp
 ifeq ($(TARGET_BUILD_VARIANT),user)
   PRODUCT_COPY_FILES += device/huawei/angler/fstab-verity.angler:root/fstab.angler
 

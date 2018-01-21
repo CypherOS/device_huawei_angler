@@ -12,21 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Screen Resolution for the Bootanimation
+# Boot animation
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit base AOSP device configuration
+# Inherit some common stuff.
+$(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
+
+# Inherit device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
-# Inherit Carbon GSM telephony parts
-$(call inherit-product, vendor/carbon/config/gsm.mk)
-
-# Inherit Carbon product configuration
-$(call inherit-product, vendor/carbon/config/common.mk)
-
-# Override AOSP defaults for CarbonROM
-PRODUCT_NAME := carbon_angler
+## Device identifier. This must come after all inclusions
+PRODUCT_NAME := aoscp_angler
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6P
 
@@ -35,6 +32,3 @@ TARGET_VENDOR := huawei
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=google/angler/angler:8.0.0/OPR6.170623.013/4283548:user/release-keys \
     PRIVATE_BUILD_DESC="angler-user 8.1.0 OPM3.171019.013 4499252 release-keys"
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carbon.maintainer="frap129"

@@ -23,6 +23,9 @@ PRODUCT_COPY_FILES := device/huawei/angler/apns-full-conf.xml:system/etc/apns-co
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+$(call inherit-product, device/huawei/angler/device.mk)
+$(call inherit-product-if-exists, vendor/huawei/angler/angler-vendor.mk)
+
 # Inherit some common stuff.
 $(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
 
@@ -35,9 +38,6 @@ PRODUCT_MANUFACTURER := Huawei
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
 TARGET_VENDOR := huawei
-
-$(call inherit-product, device/huawei/angler/device.mk)
-$(call inherit-product-if-exists, vendor/huawei/angler/angler-vendor.mk)
 
 PRODUCT_PACKAGES += \
     AOSPLinks

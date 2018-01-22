@@ -16,18 +16,31 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
+# Get the long list of APNs
+PRODUCT_COPY_FILES := device/huawei/angler/apns-full-conf.xml:system/etc/apns-conf.xml
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # Inherit some common stuff.
 $(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/huawei/angler/aosp_angler.mk)
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := aoscp_angler
+PRODUCT_DEVICE := angler
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6P
+PRODUCT_MANUFACTURER := Huawei
+PRODUCT_RESTRICT_VENDOR_FILES := true
 
 TARGET_VENDOR := huawei
+
+$(call inherit-product, device/huawei/angler/device.mk)
+$(call inherit-product-if-exists, vendor/huawei/angler/angler-vendor.mk)
+
+PRODUCT_PACKAGES += \
+    AOSPLinks
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \

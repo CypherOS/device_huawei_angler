@@ -282,7 +282,7 @@ PRODUCT_PACKAGES += \
     sensortest
 endif
 
- for off charging mode
+# for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
 

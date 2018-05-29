@@ -138,6 +138,9 @@ TARGET_USES_AOSP := true
 
 TARGET_USES_INTERACTION_BOOST := true
 
+# Install overlays to system
+TARGET_RRO_OUT_SYSTEM := true
+
 TARGET_RECOVERY_UI_LIB := librecovery_ui_nanohub
 
 # Force camera module to be compiled only in 32-bit mode on 64-bit systems

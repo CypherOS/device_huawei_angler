@@ -19,8 +19,8 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Whether device has a custom overlay directory such as /system/overlay -->
-    <bool name="config_hasCustomOverlayDir">true</bool>
+    <!-- Whether the device requires overlays to be in /system/overlay -->
+    <bool name="config_hasSystemOverlayPath">true</bool>
 	
 	<!-- The list of vendor package signatures that should also be considered
          platform signatures, specifically for use on devices with a vendor partition. -->
